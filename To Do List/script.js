@@ -7,30 +7,26 @@ function addTask() {
         return;
     }
 
-    // Create a new task element
+   
     const taskItem = document.createElement('li');
     taskItem.className = 'task';
 
-    // Add task text
     const taskText = document.createElement('span');
     taskText.textContent = taskInput.value;
     taskItem.appendChild(taskText);
 
-    // Add delete button
     const deleteBtn = document.createElement('button');
     deleteBtn.className = 'deleteBtn';
     deleteBtn.textContent = 'Delete';
     deleteBtn.onclick = () => taskItem.remove();
     taskItem.appendChild(deleteBtn);
 
-    // Add task to the list
     taskList.appendChild(taskItem);
 
     // Clear the input field
     taskInput.value = '';
 }
 
-// Attach event listener to the Add Task button
 document.getElementById('addTaskBtn').addEventListener('click', addTask);
 
 // Add functionality for pressing "Enter" to add a task
